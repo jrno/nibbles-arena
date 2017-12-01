@@ -1,0 +1,120 @@
+<html lang="fi">
+	<head>
+		<title>HTML 5 Nibbles Arena</title>
+		<meta charset="utf-8" />
+
+		<link rel="stylesheet" type="text/css" href="css/arena.css">
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.3.custom.css">
+	
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+		<script src="/socket.io/socket.io.js" type="text/javascript"></script>
+		<script src="lib/howler.min.js" type="text/javascript"></script>
+		<script src="lib/jscolor-1.4.1/jscolor.js" type="text/javascript"></script>
+		<script src="lib/jquery.tmpl.js" type="text/javascript"></script>
+		<script src="arena.common.js" type="text/javascript"></script>
+		<script src="arena.client.js" type="text/javascript"></script>
+	</head>
+	<body onload="window.open('', '_self', '');">
+		<header>
+			<h1></h1>
+		</header>
+		
+		<section id="game_elements" class="hidden">
+
+			<div id="top_board" class="clearfix">
+				<ul id="events"></ul>
+
+				<div id="personalized" class="left">
+				</div>
+			</div>
+
+			<div id="player_board">
+				<img src="img/spectators.png"/>
+				<ul id="spectators_list"></ul>
+				<img src="img/arena2.png"/>
+				<ul id="players_list"></ul>
+			</div>
+
+			<div id="game_container" class="clearfix">
+				<p id="award" style="display: none; opacity: 0.5;">+20p</p>
+			</div>
+		</section>
+
+		<!-- Welcome to nibbles dialog -->
+		<div id="welcome_dialog" class="hidden">
+			<div id="info" class="left">
+				<h2>Welcome!</h2>
+				<p>Before continuing pick yourself a username and color to continue. Your worm will be identified by the color you choose. If the username or color you chose are already
+				   taken you will be asked to choose other one. </p>
+			</div>
+
+			<img id="welcome_logo" src="img/WormAndApple2_transparent.png" />
+
+			<form>
+				<fieldset id="selections" class="left">
+					<label class="left" for="username">Username</label>
+					<input id="username" title="Enter a username 1-10 characters in length" type="text" name="username" placeholder="e.g 'jrno86'">
+					<label class="left" for="color">Worm color</label>
+					<input id="color" name="color" class="color">
+					<label class="left" for="bg_color">Background color</label>
+					<input id="bg_color" name="bg_color" class="color" value="000000">
+					<label class="left" for="border_color">Border color</label>
+					<input id="border_color" name="border_color" class="color" value="FFFF00">
+				</fieldset>
+			</form>
+		</div>
+
+		<!-- Browser not supported dialog -->
+		<div id="browser_not_supported_dialog" class="hidden">
+			<h1>Browser not supported :(</h1>
+			<p>Sorry, your browser doesn't support the necessary features to play this nibbles protoype demo. Support for HTML 5 Canvas is mandatory. Websocket support is optional. Download a newer browser version and try again</p>
+			<ul>
+				<li><a href="http://www.mozilla.org/fi/firefox/new/">Get Latest Mozilla Firefox</a></li>
+				<li><a href="https://www.google.com/intl/fi_fi/chrome/browser/">Get Latest Google Chrome</a></li>
+				<li><a href="http://www.opera.com/fi">Get Latest Opera</a></li>
+			</ul>
+		</div>
+
+		<!-- Game over dialog -->
+		<div id="gameover_dialog" class="hidden"></div>
+
+		<!-- Template for player and spectator listing -->
+		<script id="player_tmpl" type="text/x-jquery-tmpl">
+			<li class="player_information">
+				<span class="score">${score}</span>
+				<span class="worm" style="background-color: ${worm_color};"/> 
+				<span class="username">${username}</span>
+				<span class="stats">${kills}/${deaths}/${suicides}</span>
+			</li>
+		</script>
+
+		<!-- Template for in game statistics -->
+		<script id="personalized_tmpl" type="text/x-jquery-tmpl">
+			<h3>${username}</h3>
+			<p class="score clearfix">
+				<img src="/img/score.png"></img>
+				<span class="score number left">${score}</span>
+			</p>
+			<p class="kills">
+				<img src="/img/kills.png"></img>
+				<span class="kills number left">${kills}</span>
+			</p>
+		</script>
+
+		<!-- Template for game over dialog -->
+		<script id="gameover_tmpl" type="text/x-jquery-tmpl">
+			<h2>Game over ${username} :( </h2>
+			<p>
+				You scored <span>${session_score}</span> points sand destroyed <span>${session_kills}</span> 
+				worms in this arena session. Your worm was <span> ${fill1} ${pixel_length} pixels in length.</span> ${fill2}</p>
+			<p> Total record: <span>${total_score}</span> points, <span>${total_kills}</span>  kills, <span>${total_deaths}</span> deaths and <span>${total_suicides}</span> suicides. </p>
+			<p> What would you like to do? </p>
+		</script>
+		<script>
+			$(document).ready(function() {
+				initialize();
+			});
+		</script>
+ 	</body>	
+</html>

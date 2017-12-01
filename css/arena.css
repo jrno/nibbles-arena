@@ -1,0 +1,335 @@
+/* Common */
+.hidden {
+	display: none;
+}
+
+.clearfix {
+	display: inline-block;
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+.loader {
+	margin: 0px auto;
+	text-align: center;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.ui-dialog-titlebar-close {
+  visibility: hidden;
+}
+
+/** Header section */
+html {
+	font-family: "Courier New", Courier, monospace;
+	color: white;
+}
+
+header {
+	text-align: center;
+	margin-top: 20px;
+}
+
+header h1 {
+	width: 400px;
+	height: 103px;
+	margin-left: 700px;
+	background-image: url(../img/logo_pieni2.png);
+}
+
+header span {
+	font-size: 16px;
+}
+
+body {
+	background-color: #6d695c;
+    background-image: url(images/background.png);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/** status & score board */
+
+div#status_board {
+	margin: 0px auto;
+}
+
+span.name {
+	font-weight: bold;
+}
+
+div#status_board ul li {
+	list-style: none;
+	text-decoration: none;
+}
+
+div#player_board {
+	float: left;
+	width: 260px;
+	min-height: 200px;
+	font-size: 10px;
+}
+
+div#player_board ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+div#player_board h3 {
+	font-size: 20px;
+}
+
+div#player_board span {
+	display: inline-block;
+}
+
+div#player_board span.username {
+	font-weight: bold;
+	width: 100px;
+}
+
+div#player_board span.worm {
+	width: 30px; 
+	height: 10px; 
+	border: 1px solid black; 
+	margin-right: 5px;
+}
+
+div#player_board span.stats {
+	width: 50px;
+}
+
+div#player_board span.score {
+	width: 40px;
+	font-size: 20px;
+	text-transform: uppercase;
+}
+
+ul#spectators_list {
+	height: 250px;
+}
+
+ul#players_list {
+	height: 350px;
+}
+
+div#player_board ul li {
+	font-size: 15px;
+	padding: 1px;
+}
+
+#game_elements {
+	margin: 0px auto;
+	width: 1280px;
+	height: 100%;
+}
+
+#game_container {
+	float: left;
+}
+
+div#top_board {
+	margin-left: 200px;
+	width: 1000px;
+}
+
+div#top_board ul#events {
+	width: 700px;
+	height: 100px;
+	margin-left: 30px;
+	list-style: none;
+	float: left;
+}
+
+div#top_board li.event {
+	height: 18px;
+ 	font-size: 16px;
+ 	padding-bottom: 1px;
+ 	margin: 0;
+ 	color: #FFFFFF;
+}
+
+div#top_board ul#events li.event span {
+	display: inline-block;
+}
+
+div#top_board ul#events .event span.timestamp {
+	width: 100px;
+}
+
+div#top_board img#apple_counter {
+	width: 50px;
+	height: 50px;
+}
+
+div#status_board {
+	float: left;
+	width: 400px;
+}
+
+
+/** Welcome dialog */
+div#welcome_dialog div#info {
+	width: 370px;
+	padding: 5px;
+}
+
+div#welcome_dialog div#info h2 {
+	font-size: 20px;
+}
+
+div#welcome_dialog div#info p {
+	font-size: 14px;
+}
+
+div#welcome_dialog form {
+	margin-top: 15px;
+}
+
+div#welcome_dialog fieldset {
+	border: none;
+	width: 370px;
+}
+
+div#welcome_dialog fieldset label, input {
+	margin: 2px;
+	height: 30px;
+}
+
+div#welcome_dialog input.color {
+	cursor: pointer;
+}
+
+div#welcome_dialog fieldset label {
+	width: 115px;
+	display: inline-block;
+	line-height: 30px;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+img#welcome_logo {
+	width: 150px;
+	height: 150px;
+}
+
+.ui-dialog .dialog-error {
+	color: #BE0601;
+	height: 70px;
+	width: 450px;
+}
+
+.ui-dialog .dialog-error img {
+	display: block;
+	float: left;
+	width: 40px;
+	height: 40px;
+	margin-right: 10px;
+}
+
+.ui-dialog .dialog-error p {
+	font-size: 14px;
+	font-weight: bold;
+	padding: 5px;
+}
+
+/** Notifications */
+.fixed-center {
+	position: fixed !important; 
+	top: 40% !important;
+	left: 40% !important;
+}
+
+.error-notification {
+	min-width: 100px;
+	min-height: 80px;
+}
+
+.error-notification h1 {
+	font-size: 30px !important; 
+}
+
+.error-browser-not-supported {
+	padding: 10px;
+	background-color: #feeebd;
+	border: ##8e846b;
+	width: 500px;
+	height: 200px;
+}
+
+.error-browser-not-supported h1 {
+	font-size: 32px;
+}
+
+.error-browser-not-supported ul {
+	list-style: none;
+	padding: 5px;
+}
+
+.error {
+	border: 1px solid red;
+	cursor: pointer;
+}
+
+#personalized {
+	padding: 0px 0px 10px 0px;
+	margin-top: 0px;
+	margin-left: 40px;
+	width: 190px;
+	height: 120px;
+}
+
+#personalized h3 {
+	font-size: 26px;
+	padding-top: 5px;
+	margin-bottom: 2px;
+	margin-left: 6px;
+	margin-top: 0px;
+}
+
+#personalized p {
+	padding: 0;
+	margin: 0;
+	height: 35px;
+}
+
+#personalized img {
+	margin-right: 20px;
+	margin-top: 7px;
+	margin-bottom: 0px;
+	float: left;
+}
+
+#personalized span.number {
+	display: block;
+	height: 50px;
+	font-size: 28px;
+}
+
+#personalized button#join {
+	margin-top: 40px;
+	margin-left: 40px
+}
+
+#award {
+	position: absolute;
+	top: 450px;
+	left: 1100px;
+	font-size: 70px;
+}
