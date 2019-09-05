@@ -2,7 +2,7 @@
 
 Simple worm game implemented in 2012 with a purpose to investigate the browser support for various HTML 5 features. __2D drawing canvas__, __localstorage__  etc. apis weren't that widely supported back then. 
 
-Files were moved from Dropbox to Bitbucket in 2017 for safekeeping, hence the missing commit history
+Files were moved from dropbox to git in 2017 for safekeeping.
 
 ## Game logic
 
