@@ -1,6 +1,6 @@
 # Nibbles arena
 
-Simple worm game implemented in 2012 with a purpose to investigate the browser support for various HTML 5 features. __2D drawing canvas__, __localstorage__  etc. apis weren't that widely supported back then. 
+Simple worm game implemented in 2012 with a purpose to investigate the browser support for various HTML 5 features. __2D drawing canvas__, __localstorage__  etc. apis weren't that widely supported back then.
 
 Files were moved from dropbox to git in 2017 for safekeeping.
 
@@ -32,15 +32,17 @@ arena.common.js // shared
 
 ## How to run it
 
-```
+```bash
 npm install
-node arena.server.js 
+npm start // server
+npm run-script start-cli // client
 ```
 
-Open http://localhost:9090/arena.html and start playing
+access the game locally at http://localhost:9090/arena.html
+
+use different browser tabs to test the multiplayer. If accessing via remote network configure necessary firewall / public ip forwards.
 
 ## Author / Contact
 
 2012 / Jarno Pohjonen
 jarno.pohjonen@gmail.com
-

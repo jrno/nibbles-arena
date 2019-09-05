@@ -2,15 +2,18 @@
   "name": "nibbles-arena",
   "version": "0.0.1",
   "description": "Simple worm game using html5 apis (2012) ",
-  "main": "arena.client.js",
+  "engines": {
+    "node": "<=5.0"
+  },
   "dependencies": {
     "yuidocjs": "^0.3.45",
     "connect": "^2.7.2",
     "socket.io": "^0.9.13"
   },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node arena.server.js",
+    "start-cli": "open http://localhost:9090/arena.html"
   },
   "author": "jrno",
   "license": "ISC"
