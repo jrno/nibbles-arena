@@ -8,7 +8,7 @@
   "dependencies": {
     "yuidocjs": "^0.3.45",
     "connect": "^2.7.2",
-    "socket.io": "^0.9.13"
+    "socket.io": "^2.4.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
